@@ -5,10 +5,35 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  background: center fixed url("/pexels-elia-clerici-282848-912110.png");
+  background-size: cover;
+  --bs-dark: var(--nat-navbar-bg);
+  --bs-dark-rgb: var(--nat-navbar-bg-rgb);
+  --nat-navbar-highlight-text: khaki;
+  --nat-navbar-text-color: khaki;
 }
+
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
+
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+:root {
+  --nat-navbar-bg: darkblue;
+  --nat-navbar-bg-rgb: 0, 0, 139;
+  --nat-navbar-text-color: white;
+}
+
+footer, footer a {
+  color: var(--nat-navbar-text-color);
 }
