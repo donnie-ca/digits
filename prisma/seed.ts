@@ -1,7 +1,6 @@
 import { PrismaClient, Role, Condition } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
-
 const prisma = new PrismaClient();
 
 async function main() {
@@ -45,6 +44,20 @@ async function main() {
       },
     });
   });
+  config.defaultContacts.forEach(async (contact, index) => {
+    await prisma.contact.upsert({
+      where: { id: index },
+      update: {},
+      create: {
+        firstName: contact.firstName,
+        lastName: contact.lastName,
+        owner: contact.owner,
+        address: contact.address,
+        image: contact.image,
+        description: contact.description
+      },
+    })
+  })
 }
 main()
   .then(() => prisma.$disconnect())
