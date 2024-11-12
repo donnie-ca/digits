@@ -53,3 +53,13 @@ model Contact {
   description String
   owner     String
 }
+
+model Contact {
+  id        Int       @id @default(autoincrement())
+  firstName String
+  lastName  String
+  address   String
+  image     String
+  description String
+  owner     String
+}
